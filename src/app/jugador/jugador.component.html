@@ -1,0 +1,22 @@
+
+<div *ngIf="jugadores.length >= 5">
+    <h1>La lista esta completa</h1>
+    <h2>No se pueden agregar mas jugadores</h2>
+</div>
+
+<div *ngFor="let jugador of jugadores" class="card">
+    <div class="card-content">
+      <img [src]="jugador.imagen" alt="Imagen de {{ jugador.nombre }}" />
+      <p><strong>Nombre:</strong> {{ jugador.nombre }}</p>
+      <p><strong>Posicion</strong> {{ jugador.posicion }}</p>
+      <button (click)="eliminarJugador(jugador)">Eliminar Jugador</button>
+      <button (click)="mostrarDetalles(jugador)">Mostrar Detalles</button>
+    </div>
+  </div>
+  
+  <div class="add-auto">
+    <button id="boton" (click)="agregarJugador()">Agregar un nuevo jugador</button>
+  </div>
+  
+
+  <app-jugador-detalles [jugadorId]="jugadorSeleccionado?.id"></app-jugador-detalles>

@@ -1,0 +1,12 @@
+<div *ngIf="jugador" class="card">
+<img [src]="jugador.imagen" alt="imagen de {{jugador.nombre}}">
+<div class="card-content">
+    <div>
+        <p><strong>Nombre:</strong>{{jugador.nombre}}</p>
+        <p><strong>Posicion:</strong>{{jugador.posicion}}</p>
+    </div>
+    <div>
+        <label for="nombre-jugador">nombre jugador: </label>
+        <input id="nombre jugador" [(ngModel)]="jugador.nombre" placeholder="nombre">
+      </div>
+</div>
